@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ImplementingLikeButton.Models.Knowledge>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="homepage">
+        <!--The page begins here-->
+
+        <div class="mt-5">
+            @foreach (var item in Model)
+            {
+                var creationdate = item.DateofCreation.ToShortDateString();
+                var articledate = "";
+                articledate = "Created on: " + creationdate;
+
+                <div class="card mb-2 index-card shadow bg-warm_light" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-warm">@item.KnowledgeName</h5>
+                        <small class="text-warm">@articledate</small>
+                        <br />
+
+                        <!--Read and edit buttons-->
+                        <div class="mt-4">
+                            <button class="btn btn-warm rounded-pill d-inline-block transform-87 me-12 mt-2" type="button" onclick="location.href='@Url.Action("Details", "Knowledges", new { id = item.Id })'">Read now</button>
+                            <button class="btn btn-warm rounded-pill d-inline-block transform-87 me-12 mt-2 float-end" type="button" onclick="location.href='@Url.Action("Edit", "Knowledges", new { id = item.Id })'">Edit now</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

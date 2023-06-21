@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KMSNow</title>
+
+    @{ Html.RenderPartial("_StylesPartial"); }
+
+</head>
+
+<body>
+    @{ Html.RenderPartial("_NavbarPartial"); }
+
+    <div class="container body-content body-padding">
+        <div class="row">
+            <div class="col-auto w-100">
+                @{ Html.RenderPartial("_SideCanvasPartial"); }
+            </div>
+            <div class="col mt-4">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    @{ Html.RenderPartial("_ScriptsPartial"); }
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

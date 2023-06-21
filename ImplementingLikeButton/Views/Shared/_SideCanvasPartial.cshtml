@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using ImplementingLikeButton.Models;
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<div>
+    <button class="btn btn-light rounded-pill border-color-warm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="fa fa-meteor text-warm"></span></button>
+</div>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="card-title fs-2 fw-bold text-warm">Welcome again </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <div>
+            <div class="card bg-warm">
+                <div class="card-body">
+                    <p class="card-text myabout fs-6 text-white">Here at KMS Now, we are committed to make your life easier by focussing on the difficult stuff so that you are free to focus on what matters.</p>
+                </div>
+            </div>
+
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item second-link">
+                        <span class="fa fa-2x fa-user-astronaut text-warm"></span>
+                        <a class="sidenav-link text-warm" href="@Url.Action("Index", "Knowledges")">&nbsp;&nbsp; Our Knowledge Base</a>
+                    </li>
+                </ul>
+            }
+            else
+            {
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item second-link">
+                        <span class="fa fa-2x fa-user-astronaut text-warm"></span>
+                        <a class="sidenav-link text-warm" href="@Url.Action("Index", "Knowledges")">&nbsp;&nbsp; Our Knowledge Base</a>
+                    </li>
+                </ul>
+
+                <div class="card-body">
+                    <button class="btn btn-warm rounded-pill" type="button" onclick="location.href='@Url.Action("Register", "Account")'">Join us</button>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+

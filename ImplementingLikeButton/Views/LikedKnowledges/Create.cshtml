@@ -1,0 +1,56 @@
+﻿@model ImplementingLikeButton.Models.LikedKnowledge
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>LikedKnowledge</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KnowledgeId" class="control-label"></label>
+                <input asp-for="KnowledgeId" class="form-control" />
+                <span asp-validation-for="KnowledgeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LikeStatus" class="control-label"></label>
+                <input asp-for="LikeStatus" class="form-control" />
+                <span asp-validation-for="LikeStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateofCreation" class="control-label"></label>
+                <input asp-for="DateofCreation" class="form-control" />
+                <span asp-validation-for="DateofCreation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateofStatusChange" class="control-label"></label>
+                <input asp-for="DateofStatusChange" class="form-control" />
+                <span asp-validation-for="DateofStatusChange" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IPAddress" class="control-label"></label>
+                <input asp-for="IPAddress" class="form-control" />
+                <span asp-validation-for="IPAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

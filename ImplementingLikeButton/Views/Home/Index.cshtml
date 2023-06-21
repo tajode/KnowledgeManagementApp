@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div>
+        <div class="container py-4">
+            <div class="p-5 mb-4 bg-warm_light rounded-3 shadow border-0">
+                <div class="container-fluid py-5 padding-zero">
+                    <h1 class="display-5 fw-bold text-warm">Access to Information</h1>
+                    <p class="col fs-4 text-warm_black">Knowledge Management is important as it helps organizations efficiently store, share, and utilize their collective knowledge and expertise to improve decision-making, foster innovation, and drive growth.</p>
+                    <button class="btn btn-warm btn-lg rounded-pill wiggle-animation" type="button" onclick="location.href='@Url.Action("Consultations", "Home")'">Learn Now</button>
+                </div>
+            </div>
+
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6 mb-4">
+                    <div class="h-100 p-5 text-white bg-warm rounded-3 shadow border-0">
+                        <h2>Artificial Intelligence</h2>
+                        <p class="fs-5">The relationship between Knowledge Management and AI is that AI can enhance Knowledge Management by automating the process of collecting, organizing, and analyzing data and knowledge to make it more accessible and valuable to organizations.</p>
+                        <button class="btn btn-warm_transparent rounded-pill" type="button" asp-area="Identity" asp-page="/Account/Register">Join us</button>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="h-100 p-5 bg-light border rounded-3 shadow border-0">
+                        <h2 class="text-warm">Join our Cause</h2>
+                        <p class="fs-5">At KMSNow, we believe that this is a collective effort and we highly appreciate any form of support that can help us achieve our objectives.</p>
+                        <button class="btn btn-warm_light rounded-pill border-color-warm" type="button">Donate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .wiggle-animation {
+        animation: wiggle 2s linear infinite;
+    }
+
+    /* Keyframes */
+    @@keyframes wiggle {
+        0%, 7% {
+            transform: rotateZ(0);
+        }
+
+        15% {
+            transform: rotateZ(-15deg);
+        }
+
+        20% {
+            transform: rotateZ(10deg);
+        }
+
+        25% {
+            transform: rotateZ(-10deg);
+        }
+
+        30% {
+            transform: rotateZ(6deg);
+        }
+
+        35% {
+            transform: rotateZ(-4deg);
+        }
+
+        40%, 100% {
+            transform: rotateZ(0);
+        }
+    }
+</style>
+
+@section Scripts {
+
+}
